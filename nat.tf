@@ -1,6 +1,6 @@
 # Define an Elastic IP resource
 resource "aws_eip" "nat_eip" {
-  domain = "vpc"
+#   domain = "vpc"
 }
 
 resource "aws_nat_gateway" "mynat" {

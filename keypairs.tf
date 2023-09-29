@@ -16,7 +16,7 @@ resource "local_file" "private_key" {
   content  = tls_private_key.my_key.private_key_pem
 }
 
-resource "local_file" "public_key" {
-  filename = ".keys/my-key.pub"
-  content  = tls_private_key.my_key.public_key_openssh
-}
+# resource "local_file" "public_key" {
+#   filename = ".keys/my-key.pub"
+#   content  = tls_private_key.my_key.public_key_openssh
+# }
