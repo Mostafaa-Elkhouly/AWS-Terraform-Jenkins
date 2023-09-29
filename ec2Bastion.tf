@@ -12,6 +12,6 @@ resource "aws_instance" "myec2-public" {
           EOF
 
   tags = {
-    Name = "bastionHost-public-instance-tf"
+    Name = "bastionHost-instance-tf"
   }
 }
