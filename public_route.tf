@@ -1,4 +1,4 @@
-resource "aws_route_table" "myrtb-public" {
+resource "aws_route_table" "myrtb_public" {
   vpc_id = aws_vpc.myvpc.id
 
   route {
@@ -7,6 +7,6 @@ resource "aws_route_table" "myrtb-public" {
   }
 
   tags = {
-    Name = "public-route-tf"
+    "Name" = "public-route-tf"
   }
 }
