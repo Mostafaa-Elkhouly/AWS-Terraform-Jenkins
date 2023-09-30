@@ -12,7 +12,7 @@ resource "aws_key_pair" "my_aws_key" {
 
 # store private key pair into my machine to use it with ssh connection 
 resource "local_file" "private_key" {
-  filename = ".keys/my-key.pem"
+  filename = pathexpand("~/.keys/my-key.pem")
   content  = tls_private_key.my_key.private_key_pem
 }
 
