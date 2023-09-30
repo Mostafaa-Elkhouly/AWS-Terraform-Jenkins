@@ -15,10 +15,6 @@ output "vpc_cidr" {
   value = aws_vpc.myvpc.cidr_block
 }
 
-output "security_group_ssh" {
-  value = aws_security_group.ssh_port3000_sg.id
-}
-
 output "ssh_sg" {
   value = aws_security_group.ssh_sg.id
 }

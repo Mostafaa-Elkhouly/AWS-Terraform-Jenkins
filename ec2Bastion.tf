@@ -7,6 +7,10 @@ resource "aws_instance" "bastionHost" {
   vpc_security_group_ids = [module.mynetwork.ssh_sg]
   key_name               = aws_key_pair.my_aws_key.id
 
+  provisioner "local-exec" {
+    command = "echo ${self.public_ip} > inventory"  
+  }
+  
   user_data = <<-EOF
             #!/bin/bash
             echo '${tls_private_key.my_key.private_key_pem}' > /home/ec2-user/private_key.pem
