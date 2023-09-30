@@ -1,8 +1,10 @@
 resource "aws_instance" "bastionHost" {
-  ami                    = var.ami_id
-  instance_type          = var.instance_type
-  subnet_id              = aws_subnet.public_subnets[0].id
-  vpc_security_group_ids = [aws_security_group.ssh_sg.id]
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  # subnet_id     = aws_subnet.public_subnets[0].id
+  # vpc_security_group_ids = [aws_security_group.ssh_sg.id]
+  subnet_id              = module.mynetwork.pub_subnets[0].id
+  vpc_security_group_ids = [module.mynetwork.ssh_sg]
   key_name               = aws_key_pair.my_aws_key.id
 
   user_data = <<-EOF

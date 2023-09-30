@@ -1,10 +1,10 @@
-variable "cidr" {
+variable "cidr_block" {
   type        = string
   default     = "10.5.0.0/16"
   description = "this is cidr block for vpc"
 }
 
-variable "region" {
+variable "work_region" {
   type = string
 }
 
@@ -16,15 +16,15 @@ variable "instance_type" {
   type = string
 }
 
-variable "sub_pub_cidr_list" {
+variable "subnets_pub_cidr_list" {
   type = list(any)
 }
 
-variable "sub_priv_cidr_list" {
+variable "subnets_priv_cidr_list" {
   type = list(any)
 }
 
-variable "azs" {
+variable "subnets_azs" {
   type = list(any)
 }
 
