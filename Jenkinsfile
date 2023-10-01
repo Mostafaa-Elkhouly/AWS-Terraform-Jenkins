@@ -52,7 +52,7 @@ pipeline {
     }
     
     post {
-        always {
+        success {
             // archiving artifacts (Export/Publish File To Jenkins Server)
             archiveArtifacts 'inventory'
         }
