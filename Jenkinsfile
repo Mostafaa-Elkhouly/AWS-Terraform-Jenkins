@@ -1,9 +1,7 @@
 pipeline {
     
     environment {
-
        AWS_ACCESS_KEY_ID    = credentials('AWS_ACCESS_KEY_ID')
-
        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
     
@@ -29,6 +27,17 @@ pipeline {
             steps {
                 script {
                     sh 'terraform init'
+                }
+            }
+        }
+        stage('Check or Create Workspace') {
+            steps {
+                script {
+                    def env = params.ENVIRONMENT
+                    def workspace_exists = sh(returnStatus: true, script: "terraform workspace list | grep -q ${env}")
+                    if (workspace_exists != 0) {
+                        sh "terraform workspace new ${env}"
+                    }
                 }
             }
         }
