@@ -3,7 +3,7 @@ import boto3  # library for aws services
 
 
 def lambda_handler(event, context):
-    from_email = "mennahasan137@gmail.com"
+    from_email = "mostafa_elkhouly97@gmail.com"
     client = boto3.client("ses")
 
     # message body
@@ -34,7 +34,7 @@ def lambda_handler(event, context):
     # send the mail
     ses_response = client.send_email(
         Destination={
-            "ToAddresses": ["mennahasan137@gmail.com"],
+            "ToAddresses": ["mostafa_elkhouly97@gmail.com"],
         },
         Message=email_message,
         Source=from_email,

@@ -1,6 +1,6 @@
 # create an event notification that trigger changes at s3 bucket and use lambda function to sent mail
 resource "aws_s3_bucket_notification" "bucket_notification" {
-  bucket = "terraform-bucket-backend-lab1"
+  bucket = var.s3_bucket_name
 
   lambda_function {
     lambda_function_arn = aws_lambda_function.lambda_function.arn

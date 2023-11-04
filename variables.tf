@@ -37,3 +37,8 @@ variable "lambda_role_name" {
   type        = string
 }
 
+variable "s3_bucket_name" {
+  description = "s3_bucket name"
+  type        = string
+}
+

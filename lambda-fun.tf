@@ -15,7 +15,7 @@ resource "aws_lambda_permission" "allow_bucket" {
 
 # create lambda function
 resource "aws_lambda_function" "lambda_function" {
-  function_name    = "lab-lambda-function"
+  function_name    = "lambda-function"
   role             = aws_iam_role.lambda_role.arn
   runtime          = "python3.8"
   handler          = "lambda.lambda_handler"

@@ -6,3 +6,4 @@ subnets_priv_cidr_list = ["10.5.1.0/24", "10.5.2.0/24"]
 subnets_pub_cidr_list  = ["10.5.3.0/24", "10.5.4.0/24"]
 subnets_azs            = ["eu-central-1a", "eu-central-1b"]
 lambda_role_name       = "lambda_role_dev"
+s3_bucket_name         = "terraform-backend-state-bucket-iti"

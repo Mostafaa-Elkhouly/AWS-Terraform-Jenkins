@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "terraform-backend-state-bucket-iti"
+    bucket         = var.s3_bucket_name
     key            = "terraform.tfstate"
     region         = "us-east-1"
     profile        = "admin"
