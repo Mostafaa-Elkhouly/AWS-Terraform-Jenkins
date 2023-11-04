@@ -32,3 +32,8 @@ variable "subnets_azs" {
 #   type = list(map(string))
 # }
 
+variable "lambda_role_name" {
+  description = "lambda role name"
+  type        = string
+}
+
